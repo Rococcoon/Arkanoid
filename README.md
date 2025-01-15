@@ -20,9 +20,10 @@ This project is a C implementation of the classic game **Arkanoid**, based on th
 ## Installation
 
 1. Clone the repository:
-   ```bash
-   git clone https://github.com/Rococcoon/Arkanoid.git
-   cd Arkanoid
+    ```bash
+    git clone https://github.com/Rococcoon/Arkanoid.git
+    cd Arkanoid
+    ```
 
 ## Install dependencies for your build target:
 - **Linux**: Install Raylib as described above.
@@ -32,5 +33,22 @@ This project is a C implementation of the classic game **Arkanoid**, based on th
 
 ### Linux
 - Compile the project:
-  ```bash
-  make
+    ```bash
+    make
+    ```
+- Run the project:
+    ```bash
+    ./arkanoid
+
+    ```
+
+### WebAssembly
+- Compile the project:
+    ```bash
+    ./emcc.sh
+    ```
+- Serve the files locally (e.g., using Python's HTTP server):
+    ```bash
+    python3 -m http.server
+
+    ```

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Emscripten-Generated Code</title>
+    <style>
+
+:root {
+  --base: #191724;
+  --surface: #1f1d2e;
+  --overlay: #26233a;
+  --muted: #6e6a86;
+  --subtle: #908caa;
+  --text: #e0def4;
+  --love: #eb6f92;
+  --gold: #f6c177;
+  --rose: #ebbcba;
+  --pine: #31748f;
+  --foam: #9ccfd8;
+  --iris: #c4a7e7;
+  --highlight-low: rgba(110, 106, 134, 0.15);
+  --highlight-med: rgba(110, 106, 134, 0.30);
+  --highlight-high: rgba(110, 106, 134, 0.60);
+}
+
+body {
+  align-items: center;
+  background-color: var(--base);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  height: 100vh;
+  justify-content: center;
+  margin: 0;
+  padding: none;
+  width: 100vw;
+}
+
+h1 {
+  background-color: var(--text);
+  border: 3px solid var(--text);
+  box-shadow: 6px 6px 0 var(--foam);
+  color: var(--base);
+  font-weight: bold;
+  outline: 3px solid var(--base);
+  padding: var(--padding-md);
+  width: fit-content;
+}
+
+.emscripten_border {
+  border: 3px solid var(--text);
+}
+
+</style>
+  </head>
+  <body>
+    <h1>ARKANOID</h1>
+
+    <div class="emscripten_border">
+      <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" tabindex=-1></canvas>
+    </div>
+
+    <script type='text/javascript'>
+
+      var Module = {
+        canvas: (() => {
+          var canvas = document.getElementById('canvas');
+
+          // As a default initial behavior, pop up an alert when webgl context is lost. To make your
+          // application robust, you may want to override this behavior before shipping!
+          // See http://www.khronos.org/registry/webgl/specs/latest/1.0/#5.15.2
+          canvas.addEventListener("webglcontextlost", (e) => { alert('WebGL context lost. You will need to reload the page.'); e.preventDefault(); }, false);
+
+          return canvas;
+        })(),
+      };
+    </script>
+    <script async type="text/javascript" src="/static/index.js"></script>
+  </body>
+</html>
